@@ -41,10 +41,17 @@ const team = [
     }
 ];
 
+// Fase di elaborazione e di produzione
+
 // Stampo la struttura dati in console
 console.table(team);
 
-// Fase di gestione eventi
-// Fase di raccolta dati
-// Fase di elaborazione
-// Fase di produzione
+// Utilizzo un ciclo for per attraversare l'array e recuperare gli elementi (objects)
+for (let i = 0; i < team.length; i++) {
+    // Destructuring dell'object
+    const { fullName, role, img } = team[i];
+    // Creo una variabile per salvare le informazioni
+    const member = `${fullName} - ${role} (${img})`;
+    // Stampo il membro del team in console
+    console.log(member);
+}
