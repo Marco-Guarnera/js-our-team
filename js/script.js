@@ -1,5 +1,9 @@
 // Fase di preparazione
 
+// Recupero gli elementi dal DOM
+const teamElement = document.getElementById("team");
+console.log(teamElement);
+
 // Strutture dati
 
 // Utilizzo un array di oggetti come struttura dati per i membri del team
@@ -46,6 +50,9 @@ const team = [
 // Stampo la struttura dati in console
 console.table(team);
 
+// Variabile utilizzata per costruire gli elementi della lista
+let members = "";
+
 // Utilizzo un ciclo for per attraversare l'array e recuperare gli elementi (objects)
 for (let i = 0; i < team.length; i++) {
     // Destructuring dell'object
@@ -54,4 +61,9 @@ for (let i = 0; i < team.length; i++) {
     const member = `${fullName} - ${role} (${img})`;
     // Stampo il membro del team in console
     console.log(member);
+    // Costruisco l'elemento della lista
+    members += `<li>${member}</li>`;
 }
+
+// Monto gli elementi della lista nel DOM
+teamElement.innerHTML = members;
